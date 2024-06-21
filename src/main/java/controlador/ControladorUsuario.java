@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.TbUsuario;
+import dao.UsuarioDao;
+
 /**
  * Servlet implementation class ControladorUsuario
  */
 @WebServlet("/ControladorUsuario")
 public class ControladorUsuario extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+	private static final long serialVersionUID = 1L;     
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,16 +29,40 @@ public class ControladorUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		 String accion = request.getParameter("accion");
+	        if (accion.equalsIgnoreCase("Ingresar")) {
+	        	TbUsuario usuario = new TbUsuario();
+	        	UsuarioDao crud = new UsuarioDao();
+	        	//Recuperamos datos del formulario y almacenamos en las variables
+	            String usser = request.getParameter("usuario");
+	            String pass = request.getParameter("password");
+	            //validamos en la base de datos
+	            crud.ValidarUsuario(usser, pass);
+	            System.out.print("Datos correctos");
+	            if(usuario.getUsuario()!= null){
+	                System.out.print("Bienvenido");
+	                request.setAttribute("exito", "ok");
+	                request.setAttribute("usuario", usuario);
+	                request.getRequestDispatcher("index.jsp").forward(request, response);                    
+
+	            }else{
+	            	request.setAttribute("exito", "fail");
+	                request.getRequestDispatcher("login.jsp").forward(request, response);
+	            }
+	        }else{
+	            request.getRequestDispatcher("login.jsp").forward(request, response);
+	        }  //fin del proceso para ingresar
 	}
 
 }

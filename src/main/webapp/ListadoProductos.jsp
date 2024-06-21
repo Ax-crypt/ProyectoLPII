@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@page import="java.util.List" %>
-<%@page import="model.TbCliente" %>
+<%@page import="model.TbProducto" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <body>
 
 <h2 align="center"> 
- <a href="RegistrarCliente.jsp" class="text-body"><strong><em>Registrar Cliente</em></strong></a> 
+ <a href="RegistrarCliente.jsp" class="btn btn-dark"><strong><em>Registrar Nuevo</em></strong></a> 
 </h2> 
 
 <div class="row p-3 mb-2 bg-light text-dark">
@@ -23,28 +23,25 @@
 						<tr>
 							<th>Id</th>
 							<th>Nombre</th>
-							<th>Apellidos</th>							
-							<th>Documento</th>
-							<th>Correo</th>
-							<th>Telefono</th>
-							<th>Sexo</th>
-							<th>Nacionalidad</th>
+							<th>Descripcion</th>	
+							<th>Estado</th>						
+							<th>Precio de Compra</th>						
+							<th>Precio de venta</th>
+							
 						</tr>
 <%
 	
-	List<TbCliente> lista = (List<TbCliente>)request.getAttribute("listadoClientes");
+	List<TbProducto> lista = (List<TbProducto>)request.getAttribute("listado");
 if(lista != null){
-for(TbCliente item: lista){	
+for(TbProducto lis: lista){	
 	%>
 							<tr>
-							<th> <%= item.getIdcliente() %> </th>
-							<th><%= item.getNombre() %></th>
-							<th><%= item.getApellido() %></th>							
-							<th><%= item.getDni() %></th>
-							<th><%= item.getEmail() %></th>
-							<th><%= item.getTelefono() %></th>
-							<th><%= item.getSexo() %></th>
-							<th><%= item.getNacionalidad() %></th>
+							<th> <%= lis.getIdproducto() %> </th>
+							<th><%= lis.getNombre() %></th>
+							<th><%= lis.getDescripcion() %></th>							
+							<th><%= lis.getEstado() %></th>
+							<th><%= lis.getPreciocompra() %></th>
+							<th><%= lis.getPrecioventa() %></th>
 						</tr>
 	<%  
   }

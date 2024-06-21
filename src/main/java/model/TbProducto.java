@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
 
 /**
@@ -16,26 +15,17 @@ public class TbProducto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idproducto;
-
-	private String codbarras;
 
 	private String descripcion;
 
-	@Temporal(TemporalType.DATE)
-	private Date fechavenc;
+	private String estado;
 
-	private String lote;
+	private String nombre;
 
-	private String nomproducto;
+	private String preciocompra;
 
-	private double precio;
-
-	//bi-directional many-to-one association to TbTipoproducto
-	@ManyToOne
-	@JoinColumn(name="idtipoproducto")
-	private TbTipoproducto tbTipoproducto;
+	private String precioventa;
 
 	public TbProducto() {
 	}
@@ -48,14 +38,6 @@ public class TbProducto implements Serializable {
 		this.idproducto = idproducto;
 	}
 
-	public String getCodbarras() {
-		return this.codbarras;
-	}
-
-	public void setCodbarras(String codbarras) {
-		this.codbarras = codbarras;
-	}
-
 	public String getDescripcion() {
 		return this.descripcion;
 	}
@@ -64,44 +46,36 @@ public class TbProducto implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFechavenc() {
-		return this.fechavenc;
+	public String getEstado() {
+		return this.estado;
 	}
 
-	public void setFechavenc(Date fechavenc) {
-		this.fechavenc = fechavenc;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
-	public String getLote() {
-		return this.lote;
+	public String getNombre() {
+		return this.nombre;
 	}
 
-	public void setLote(String lote) {
-		this.lote = lote;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String getNomproducto() {
-		return this.nomproducto;
+	public String getPreciocompra() {
+		return this.preciocompra;
 	}
 
-	public void setNomproducto(String nomproducto) {
-		this.nomproducto = nomproducto;
+	public void setPreciocompra(String preciocompra) {
+		this.preciocompra = preciocompra;
 	}
 
-	public double getPrecio() {
-		return this.precio;
+	public String getPrecioventa() {
+		return this.precioventa;
 	}
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-
-	public TbTipoproducto getTbTipoproducto() {
-		return this.tbTipoproducto;
-	}
-
-	public void setTbTipoproducto(TbTipoproducto tbTipoproducto) {
-		this.tbTipoproducto = tbTipoproducto;
+	public void setPrecioventa(String precioventa) {
+		this.precioventa = precioventa;
 	}
 
 }

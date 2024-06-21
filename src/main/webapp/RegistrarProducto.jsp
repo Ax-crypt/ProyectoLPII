@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registrar Cliente</title>
+<title>Registrar productos</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
 </head>
 
@@ -18,28 +18,22 @@
         <div class="col-10 col-md-7 col-lg-5 col-xl-4">
           <div class="card" style="border-radius: 15px; background: linear-gradient(90deg, red, #7B68EE, rgb(204, 204, 255));">
             <div class="card-body p-3">
-              <h2 class="text-uppercase text-center mb-4">Crear cuenta</h2>
-           <form action="ControladorCliente" method="post">
+              <h2 class="text-uppercase text-center mb-4">registrar Productos</h2>
+           <form action="ControladorProducto" method="post">
                 <div class="form-outline mb-4" >
                   <input type="text" class="form-control" name="nombre" placeholder="Nombre">                                  
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                  <input type="text" class="form-control" name="descripcion" placeholder="Descripcion">
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" name="dni" placeholder="Dni" >
+                  <input type="text" class="form-control" name="estado" placeholder="Estado" >
                 </div>
                 <div class="form-outline mb-2">
-                   <input type="text" class="form-control" name="email" placeholder="Correo" >
+                   <input type="text" class="form-control" name="precompra" placeholder="Precio de compra" >
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" name="telefono" placeholder="Telefono" />
-                </div>
-                <div class="form-outline mb-2">
-                  <input type="text" class="form-control" name="sexo"/>
-                </div>
-                <div class="form-outline mb-2">
-                  <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" />
+                  <input type="text" class="form-control" name="preventa" placeholder="Precio de venta" />
                 </div>
               <div class="d-flex justify-content-center">
                 <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name="accion" value="Registrar" >                               

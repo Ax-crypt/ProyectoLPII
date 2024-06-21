@@ -7,8 +7,7 @@ import model.TbUsuario;
 public interface IUsuario {
 	public void RegistrarUsuario (TbUsuario Usuario);
 	public void ActualizarUsuario (TbUsuario Usuario);
-	public void EliminarUsuario (TbUsuario Usuario);
-	public TbUsuario BuscarUsuario(TbUsuario Usuario);
+	public TbUsuario ValidarUsuario (String usuario, String password);
 	public List<TbUsuario> listarUsuario();
 
 
