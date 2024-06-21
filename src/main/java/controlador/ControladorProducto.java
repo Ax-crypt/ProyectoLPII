@@ -68,7 +68,7 @@ public class ControladorProducto extends HttpServlet {
 		
 		List<TbProducto> listado =crud.listarProducto();
 		request.setAttribute("listado", listado);
-		request.getRequestDispatcher("ListadoProductos").forward(request, response);
+		request.getRequestDispatcher("ListadoProductos.jsp").forward(request, response);
 		
 		
 	}

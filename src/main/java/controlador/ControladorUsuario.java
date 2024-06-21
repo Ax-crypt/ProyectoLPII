@@ -52,12 +52,10 @@ public class ControladorUsuario extends HttpServlet {
 	            System.out.print("Datos correctos");
 	            if(usuario.getUsuario()!= null){
 	                System.out.print("Bienvenido");
-	                request.setAttribute("exito", "ok");
 	                request.setAttribute("usuario", usuario);
-	                request.getRequestDispatcher("index.jsp").forward(request, response);                    
+	                request.getRequestDispatcher("RegistrarProducto.jsp").forward(request, response);                    
 
 	            }else{
-	            	request.setAttribute("exito", "fail");
 	                request.getRequestDispatcher("login.jsp").forward(request, response);
 	            }
 	        }else{
