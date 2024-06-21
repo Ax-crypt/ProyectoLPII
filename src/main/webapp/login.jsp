@@ -18,13 +18,13 @@
             <div class="card-body">
                 <form method="POST" action="ControladorUsuario">
                 <div class="form-outline mb-2" >
-                    <div class="form-outline mb-2">                                                    
-					     <input type="text" class="form-control" name="usuario" placeholder="usuario" required>                                         
+                    <div class="form-outline mb-2">                               ï¿½ï¿½                   
+					     <input type="text" class="form-control" name="usuario" placeholder="usuario">                       ï¿½                 
                     </div>
                     <div class="form-outline mb-2">                        
-                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                     </div>
-                    <a href="index.jsp" class="btn btn-success">Ingresar</a>  
+                    <button type="submit" class="btn btn-success" name="accion" value="Ingresar">Ingresar</button> 
                      </div>                                                              
                 </form>
             </div>
