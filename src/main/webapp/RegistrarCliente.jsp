@@ -33,18 +33,17 @@
                    <input type="text" class="form-control" name="email" placeholder="Correo" >
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" class="telefono" placeholder="Telefono" />
+                  <input type="text" class="form-control" name="telefono" placeholder="Telefono" />
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" class="sexo"/>
+                  <input type="text" class="form-control" name="sexo"/>
                 </div>
                 <div class="form-outline mb-2">
-                  <input type="text" class="form-control" class="nacionalidad" placeholder="Nacionalidad" />
+                  <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" />
                 </div>
               <div class="d-flex justify-content-center">
                 <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name="accion" value="Registrar" >                               
-              </div> 
-             <!-- <a href="login.jsp" class="text-body"><strong><em>Iniciar sesion</em></strong></a>    -->        
+              </div>            
           </form>
             </div>
           </div>

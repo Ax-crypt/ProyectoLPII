@@ -33,7 +33,7 @@ public class ClienteDao implements ICliente{
 	@Override
 	public void ActualizarCliente(TbCliente cliente) {
 		//Establecer conexion		
-		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoMavenLPII");
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoLPII");
 		
 		//gestionar las entidades
 		EntityManager manager = em.createEntityManager();
@@ -55,7 +55,7 @@ public class ClienteDao implements ICliente{
 	@Override
 	public void EliminarCliente(TbCliente cliente) {
 		//Establecer conexion		
-		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoMavenLPII");
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoLPII");
 		
 		//gestionar las entidades
 		EntityManager manager = em.createEntityManager();
@@ -78,7 +78,7 @@ public class ClienteDao implements ICliente{
 	@Override
 	public TbCliente BuscarCliente(TbCliente cliente) {
 		//Establecer conexion		
-		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoMavenLPII");
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoLPII");
 		
 		//gestionar las entidades
 		EntityManager manager = em.createEntityManager();
@@ -101,7 +101,7 @@ public class ClienteDao implements ICliente{
 	@Override
 	public List<TbCliente> listarCliente() {
 		//Establecer conexion		
-		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoMavenLPII");
+		EntityManagerFactory em = Persistence.createEntityManagerFactory("ProyectoLPII");
 		
 		//gestionar las entidades
 		EntityManager manager = em.createEntityManager();
